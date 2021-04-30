@@ -54,6 +54,15 @@ public class Group extends Entity
         return new ArrayList<Entity>(list);
     }
 
+    public ArrayList<Sprite> getSpriteList()
+    {
+        ArrayList<Sprite> spriteList = new ArrayList<Sprite>();
+        for (Entity e : list)
+            spriteList.add( (Sprite)e );
+
+        return spriteList;
+    }
+
     /**
      * Determine the number of entities in this collection.
      * @return the size of this collection
@@ -77,7 +86,7 @@ public class Group extends Entity
      */
     public void update(double dt)
     {
-        for ( Entity e : this.list )
+        for ( Entity e : this.getList() )
             e.update(dt);
     }
 

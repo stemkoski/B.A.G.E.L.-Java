@@ -86,7 +86,7 @@ public class Group extends Entity
      */
     public void update(double dt)
     {
-        for ( Entity e : this.list )
+        for ( Entity e : this.getList() )
             e.update(dt);
     }
 
